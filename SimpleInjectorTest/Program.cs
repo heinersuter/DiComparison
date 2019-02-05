@@ -10,7 +10,7 @@ namespace SimpleInjectorTest
         {
             var container = new Container();
 
-            var parent = new Parent(container.GetInstance<Child>(), "SimpleInjector");
+            var parent = new Parent(container.GetInstance<Child>(), "SimpleInjector"); // Parametr angeben nicht möglich
             Console.WriteLine(parent.Child.Content);
 
             Console.ReadKey();

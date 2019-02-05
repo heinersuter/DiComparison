@@ -10,7 +10,7 @@ namespace LightInjectTest
         {
             var container = new ServiceContainer();
             container.Register<Child>();
-            container.Register<string, IParent>((factory, arg) => new Parent(factory.GetInstance<Child>(), arg));
+            container.Register<string, IParent>((factory, arg) => new Parent(factory.GetInstance<Child>(), arg)); // Construktor mit dynamischer Parameter muss explizit aufgerufen werden
 
             var parent = container.GetInstance<string, IParent>("LightInject");
             Console.WriteLine(parent.Child.Content);
